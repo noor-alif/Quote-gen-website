@@ -9,8 +9,13 @@ let isDarkMode = true;
 // Function to toggle dark mode
 function toggleDarkMode() {
   isDarkMode = !isDarkMode;
-  container.classList.toggle('dark-theme');
-  container.classList.toggle('light-theme');
+  if (isDarkMode) {
+    container.classList.add('dark-theme');
+    container.classList.remove('light-theme');
+  } else {
+    container.classList.add('light-theme');
+    container.classList.remove('dark-theme');
+  }
 }
 
 // Function to get a new quote
