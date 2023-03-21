@@ -100,3 +100,24 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/* Styles for dark mode */
+.dark-theme {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-theme .quote {
+  border-left: 5px solid #fff;
+}
+
+/* Styles for light mode */
+.light-theme {
+  background-color: #fff;
+  color: #222;
+}
+
+.light-theme .quote {
+  border-left: 5px solid #222;
+}
+
