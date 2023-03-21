@@ -1,29 +1,54 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  transition: all 0.5s;
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-#quote-container {
-  margin-top: 50px;
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.quote {
+  margin-bottom: 30px;
 }
 
 #quote {
-  font-size: 30px;
-  font-style: italic;
-  line-height: 1.5;
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  line-height: 1.6;
 }
 
 #author {
-  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.buttons {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#new-quote {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
 .toggle-container {
-  margin-top: 50px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.toggle-label {
+  font-size: 1rem;
+  margin: 0 10px;
 }
 
 .switch {
@@ -31,25 +56,21 @@ body {
   display: inline-block;
   width: 60px;
   height: 34px;
-  margin-right: 10px;
 }
 
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+  display: none;
 }
 
 .slider {
   position: absolute;
-  cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: 0.4s;
   border-radius: 34px;
+  transition: .4s;
 }
 
 .slider:before {
@@ -59,17 +80,13 @@ body {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
+  background-color: #fff;
   border-radius: 50%;
+  transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  background-color: #2196F3;
 }
 
 input:checked + .slider:before {
@@ -83,26 +100,3 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
-.dark {
-  background-color: #282c34;
-  color: #fff;
-}
-
-.dark #quote-container {
-  border: 2px solid #fff;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.dark .toggle-container {
-  color: #fff;
-}
-
-.light {
-  background-color: #fff;
-  color: #282c34;
-}
-
-.light #quote-container {
-  border: 2px solid #282
