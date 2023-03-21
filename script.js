@@ -3,6 +3,7 @@ const author = document.getElementById('author');
 const newQuoteBtn = document.getElementById('new-quote');
 const toggle = document.getElementById('toggle');
 const readBtn = document.getElementById('read');
+const listenBtn = document.getElementById('listen');
 const container = document.querySelector('.container');
 
 let isDarkMode = true;
@@ -42,17 +43,15 @@ function readQuote(text) {
   window.speechSynthesis.speak(speech);
 }
 
-// Generate a new quote on page load
-getQuote();
+// Function to generate an audio file from text using text-to-speech
+function generateAudio(text) {
+  const utterance = new SpeechSynthesisUtterance(text);
+  const synth = window.speechSynthesis;
+  const voices = synth.getVoices();
+  utterance.voice = voices[0];
+  synth.speak(utterance);
+  const audio = new Audio();
+  audio.src = URL.createObjectURL(new Blob([new TextEncoder().encode(text)], { type: "audio/ogg" }));
+  return audio;
+}
 
-// Event listener for new quote button
-newQuoteBtn.addEventListener('click', getQuote);
-
-// Event listener for toggle switch
-toggle.addEventListener('change', toggleDarkMode);
-
-// Event listener for read button
-readBtn.addEventListener('click', () => {
-  const quoteText = quote.innerText;
-  readQuote(quoteText);
-});
